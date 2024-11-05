@@ -14,7 +14,6 @@ export const fields = {
     disableForTable: true,
     min: 0,
     max: 100,
-
   },
   center: {
     type: 'search',
@@ -28,7 +27,6 @@ export const fields = {
     dataIndex: ['Center', 'name'],
     feedback: 'Center',
     disableForTable: true,
-
   },
   uuid: {
     type: 'string',

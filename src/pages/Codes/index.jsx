@@ -3,6 +3,7 @@ import CrudModule from '@/modules/CrudModule/CrudModule';
 import useLanguage from '@/locale/useLanguage';
 import CodeForm from '@/forms/CodeForm.jsx';
 import { Flex, Image } from 'antd';
+import QRCode from 'react-qr-code';
 
 export default function Codes() {
   const translate = useLanguage();
@@ -31,6 +32,13 @@ export default function Codes() {
     {
       title: translate('Code'),
       dataIndex: 'uuid',
+    },
+    {
+      title: translate('QR-Code'),
+      dataIndex: 'uuid',
+      render: (Code) => {
+        return <QRCode value={Code ?? ''} size={50} />;
+      },
     },
     {
       title: translate('Center'),
@@ -67,6 +75,7 @@ export default function Codes() {
   };
   return (
     <CrudModule
+      WithExcelFile={true}
       createForm={<CodeForm />}
       updateForm={<CodeForm isUpdateForm={true} />}
       config={config}

@@ -18,6 +18,7 @@ import { useCrudContext } from '@/context/crud';
 
 import { CrudLayout } from '@/layout';
 
+//code tool panal
 function SidePanelTopContent({ config, formElements, withUpload }) {
   const translate = useLanguage();
   const { crudContextAction, state } = useCrudContext();
@@ -106,7 +107,7 @@ function FixHeaderPanel({ config }) {
   );
 }
 
-function CrudModule({ config, createForm, updateForm, withUpload = false }) {
+function CrudModule({ config, createForm, updateForm, withUpload = false, WithExcelFile = false }) {
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
@@ -117,7 +118,12 @@ function CrudModule({ config, createForm, updateForm, withUpload = false }) {
       config={config}
       fixHeaderPanel={<FixHeaderPanel config={config} />}
       sidePanelBottomContent={
-        <CreateForm config={config} formElements={createForm} withUpload={withUpload} />
+        <CreateForm
+          config={config}
+          formElements={createForm}
+          withUpload={withUpload}
+          WithExcelFile={WithExcelFile}
+        />
       }
       sidePanelTopContent={
         <SidePanelTopContent config={config} formElements={updateForm} withUpload={withUpload} />
