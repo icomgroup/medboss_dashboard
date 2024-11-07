@@ -477,6 +477,7 @@ const lang = {
   add_new_files: 'Add New File',
   True: 'True',
   False: 'False',
+  attach: 'Attach',
 };
 
 export default lang;

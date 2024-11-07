@@ -32,6 +32,9 @@ export default function CreateForm({
     if (fieldsValue.files && withUpload) {
       fieldsValue.files = fieldsValue.files[0].originFileObj;
     }
+    if (fieldsValue.attach && withUpload) {
+      fieldsValue.attach = fieldsValue.attach[0].originFileObj;
+    }
 
     if (fieldsValue.img && withUpload) {
       fieldsValue.img = fieldsValue.img[0].originFileObj;

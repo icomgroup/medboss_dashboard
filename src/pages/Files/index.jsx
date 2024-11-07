@@ -48,6 +48,13 @@ export default function Files() {
         return isPublished ? 'True' : 'False';
       },
     },
+    {
+      title: 'has Attached',
+      dataIndex: 'has_attached',
+      render: (has_attached, record, index) => {
+        return has_attached ? 'True' : 'False';
+      },
+    },
   ];
 
   const readColumns = [
@@ -78,6 +85,10 @@ export default function Files() {
     {
       title: translate('Published'),
       dataIndex: 'is_published',
+    },
+    {
+      title: 'has Attached',
+      dataIndex: 'has_attached',
     },
   ];
 

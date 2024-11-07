@@ -162,7 +162,18 @@ export default function FileForm({ isUpdateForm = false }) {
           },
         ]}
       >
-        <Upload beforeUpload={beforeUploadFile} listType="picture" maxCount={1}>
+        <Upload beforeUpload={beforeUploadFile} listType="file" maxCount={1}>
+          <Button icon={<UploadOutlined />}>{translate('click_to_upload')}</Button>
+        </Upload>
+      </Form.Item>
+
+      <Form.Item
+        name="attach"
+        label={translate('Attach')}
+        valuePropName="fileList[]"
+        getValueFromEvent={normFile}
+      >
+        <Upload beforeUpload={beforeUploadFile} listType="file" maxCount={1}>
           <Button icon={<UploadOutlined />}>{translate('click_to_upload')}</Button>
         </Upload>
       </Form.Item>

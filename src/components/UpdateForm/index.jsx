@@ -37,6 +37,9 @@ export default function UpdateForm({ config, formElements, withUpload = false })
     if (fieldsValue.file && withUpload) {
       fieldsValue.file = fieldsValue.file[0].originFileObj;
     }
+    if (fieldsValue.attach && withUpload) {
+      fieldsValue.attach = fieldsValue.attach[0].originFileObj;
+    }
 
     if (fieldsValue.imgUrl && withUpload) {
       fieldsValue.imgUrl = fieldsValue.imgUrl[0].originFileObj;
